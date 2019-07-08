@@ -10,10 +10,10 @@ $strone ="kibbrs";
 $strtwo= "sibbrs";
 
 
-echo LevenShtein::levensht($strone,$strtwo);
+echo LevenShtein::levenshtein_dis($strone,$strtwo);
 
 
 $hamming= new Hamming($strone,$strtwo);
 
 echo "<br/>";
-echo $hamming->hammingDist();
+echo $hamming->hamming_dis();
