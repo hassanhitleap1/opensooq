@@ -21,6 +21,16 @@ class Hamming extends Validation{
     public function hamming_dis() 
     { 
         $i = 0; $count = 0; 
+       
+        if($this->isEmpty($this->str1)){
+            return $count;
+        }
+
+        if($this->isEmpty($this->str2)){
+            return $count;
+        }
+
+       
         while (isset($this->str1[$i]) != '') 
         { 
             if ($this->str1[$i] != $this->str2[$i]) 

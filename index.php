@@ -16,7 +16,10 @@ if(isset($_POST)){
     }
 
     if(isset($_POST["submitLevenshtein"])){
-        $levenshtein=LevenShtein::levenshtein_dis($_POST["inputa"],$_POST["inputb"]);
+      $validdte=new Validation;
+      if(!$validdte->isEmptyString($_POST["inputa"]) && !$validdte->isEmptyString($_POST["inputb"]) ){
+          $levenshtein=LevenShtein::levenshtein_dis($_POST["inputa"],$_POST["inputb"]);
+      }
     }
 }
 ?>
@@ -50,7 +53,7 @@ if(isset($_POST)){
     </form>
   </div>
   <div class="card-footer">
-      <h3> the ruslut is <?=$hammingValue?></h3>
+      <h3> the ruslut is { <?=$hammingValue?> }</h3>
   </div>
 </div>
 
@@ -73,7 +76,7 @@ if(isset($_POST)){
     </form>
   </div>
   <div class="card-footer">
-      <h3> the ruslut is  <?=$levenshtein?></h3>
+      <h3> the ruslut is  { <?=$levenshtein?> }</h3>
   </div>
 </div>
 
